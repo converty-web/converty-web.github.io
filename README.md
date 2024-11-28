@@ -15,6 +15,8 @@ examples:
 
 you can also use the full non-abbreviated version of every unit below
 
+example: `10 millimeters to centimeters`
+
 ## length
 
 `mm to cm`, `cm to mm`, `cm to m`, `m to cm`, `m to km`, `km to m`, `mm to m`, `m to mm`, `km to mm`, `mm to km`
