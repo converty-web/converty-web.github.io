@@ -19,14 +19,14 @@ const conversionRates = {
   "mm2-m2": x => x / 1e6,
   "m2-mm2": x => x * 1e6,
 
-  "s-min": x => x / 60,
-  "min-s": x => x * 60,
-  "min-hr": x => x / 60,
-  "hr-min": x => x * 60,
+  "s-m": x => x / 60,
+  "m-s": x => x * 60,
+  "m-hr": x => x / 60,
+  "hr-m": x => x * 60,
   "hr-d": x => x / 24,
   "d-hr": x => x * 24,
-  "min-h": x => x / 60,
-  "h-min": x => x * 60,
+  "m-h": x => x / 60,
+  "h-m": x => x * 60,
   "h-d": x => x / 24,
   "d-h": x => x * 24,
   "d-wk": x => x / 7,
@@ -38,10 +38,12 @@ const conversionRates = {
   "d-y": x => x / 365.25,
   "y-d": x => x * 365.25,
 
-  "v-w-a": (v, a) => v * a,
+  "w-a-v": (w, v) => w / v,
   "w-v-a": (w, a) => w / a,
   "a-w-v": (a, v) => a * v,
-  "w-a-v": (w, v) => w / v
+  "a-v-w": (a, w) => w / a,
+  "v-a-w": (v, w) => w / v,
+  "v-w-a": (v, a) => v * a
 };
 
 const unitAbbreviations = {
@@ -65,8 +67,8 @@ const unitAbbreviations = {
 
   seconds: "s",
   second: "s",
-  minutes: "min",
-  minute: "min",
+  minutes: "m",
+  minute: "m",
   hours: "h",
   hour: "h",
   days: "d",
@@ -135,7 +137,7 @@ async function handleConversion(from, value, to, aValue, aUnit) {
 
 document.getElementById("input").addEventListener("input", async function (event) {
   const input = event.target.value.toLowerCase().trim();
-  const match = input.match(/^([\d.]+)\s*([a-z2]+)\s+to\s+([a-z2]+)(?:\s+at\s+([\d.]+)\s*([a-z]+))?$/);
+  const match = input.match(/^(\d+(?:.\d+)?)\s*([a-z2]+)\s+to\s+([a-z2]+)(?:\s+at\s+(\d+(?:.\d+)?)([a-z2]+))?$/);
 
   if (!match) {
     document.getElementById("result").textContent = "waiting";
