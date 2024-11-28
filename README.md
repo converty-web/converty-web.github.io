@@ -1,18 +1,19 @@
 # converty
 
 a fast all-purpose natural language conversion tool  
-power by the currency conversion api [here](https://github.com/fawazahmed0/exchange-api)
+
+powered by the currency conversion api [here](https://github.com/fawazahmed0/exchange-api)
 
 # usage
 
 examples:
 - `10usd to eur` or `10 usd to eur` (spaces are ignored for units)
-- `10mm2 to cm2` (powers are just digits after the unit for speed)
+- `10mm2 to cm2` (powers are just digits after the unit for ease of use)
 - `10s to d`
 
-you can also use aliases such as `millimeter2` or `seconds`
-
 # supported conversions
+
+you can also use the full non-abbreviated version of every unit below
 
 ## length
 
