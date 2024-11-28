@@ -86,6 +86,10 @@ const unitAbbreviations = {
   month: "mo",
   years: "y",
   year: "y",
+  
+  kelvin: "k",
+  celsius: "c",
+  fahrenheit: "f",
 
   watts: "w",
   volts: "v",
