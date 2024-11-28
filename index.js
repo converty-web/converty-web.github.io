@@ -86,6 +86,13 @@ const unitAbbreviations = {
   amp: "a"
 };
 
+var currencyList = [];
+
+(async () => {
+  const currencyResp = await fetch("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json");
+  currencyList = Object.keys(await currencyResp.json());
+})();
+
 const currencyCache = {};
 
 async function handleCurrencyConversion(from, value, to) {
@@ -119,7 +126,7 @@ async function handleConversion(from, value, to, aValue, aUnit) {
     
   if (typeof conversion === "function") {
     return tripleConv ? conversion(value, aValue) : conversion(value);
-  } else if (from.length === 3 && to.length === 3) {
+  } else if (currencyList.includes(from) && currencyList.includes(to)) {
     return handleCurrencyConversion(from, value, to);
   } else {
     return null;
