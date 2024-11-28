@@ -21,10 +21,10 @@ const conversionRates = {
 
   "s-m": x => x / 60,
   "m-s": x => x * 60,
-  "m-hr": x => x / 60,
-  "hr-m": x => x * 60,
-  "hr-d": x => x / 24,
-  "d-hr": x => x * 24,
+  "m-h": x => x / 60,
+  "h-m": x => x * 60,
+  "h-d": x => x / 24,
+  "d-h": x => x * 24,
   "m-h": x => x / 60,
   "h-m": x => x * 60,
   "h-d": x => x / 24,
@@ -37,6 +37,13 @@ const conversionRates = {
   "y-mo": x => x * 12,
   "d-y": x => x / 365.25,
   "y-d": x => x * 365.25,
+
+  "f-c": f => (f - 32) * 5 / 9,
+  "c-f": c => (c * 9 / 5) + 32,
+  "k-c": k => k - 273.15,
+  "c-k": c => c + 273.15,
+  "k-f": k => (k - 273.15) * 9 / 5 + 32,
+  "f-k": f => (f - 32) * 5 / 9 + 273.15,
 
   "w-a-v": (w, v) => w / v,
   "w-v-a": (w, a) => w / a,
@@ -155,6 +162,6 @@ document.getElementById("input").addEventListener("input", async function (event
   if (result === null) {
     document.getElementById("result").textContent = "waiting";
   } else {
-    document.getElementById("result").textContent = `${result.toPrecision(4)} ${toUnit}`;
+    document.getElementById("result").textContent = `${result.toPrecision(3)} ${toUnit}`;
   }
 });
