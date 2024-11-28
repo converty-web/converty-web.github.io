@@ -10,6 +10,8 @@ examples:
 - `10mm2 to cm2` (powers are just digits after the unit for speed)
 - `10s to d`
 
+you can also use aliases such as `millimeter2` or `seconds`
+
 # supported conversions
 
 ## length
