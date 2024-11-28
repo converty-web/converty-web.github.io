@@ -50,6 +50,11 @@ body {
   transition: 0.3s ease-in-out border;
 }
 
+.userinput:focus {
+  outline: none;
+  border: 2px solid #cb00ff;
+}
+
 .result {
   display: block;
   font-size: 0.9rem;
@@ -75,6 +80,23 @@ body {
   transition: 0.3s ease-in-out color;
 }
 
+.footer-author {
+  color: #cb00ff;
+}
+
+.footer-author:hover {
+  color: #bc01d4;
+}
+
+.info-help-menu {
+  transition: 0.3s ease-in-out color;
+}
+
+.info-help-menu:hover {
+  color: #cb00ff;
+  cursor: pointer;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #0a0a0a;
@@ -91,19 +113,6 @@ body {
 
   .userinput::placeholder {
     color: #cccccc;
-  }
-
-  .userinput:focus {
-    outline: none;
-    border: 2px solid #cb00ff;
-  }
-
-  .footer-author {
-    color: #cb00ff;
-  }
-
-  .footer-author:hover {
-    color: #bc01d4;
   }
 }
 
@@ -123,18 +132,5 @@ body {
 
   .userinput::placeholder {
     color: #333333;
-  }
-
-  .userinput:focus {
-    outline: none;
-    border: 2px solid #cb00ff;
-  }
-
-  .footer-author {
-    color: #cb00ff;
-  }
-
-  .footer-author:hover {
-    color: #bc01d4;
   }
 }
