@@ -25,6 +25,14 @@ example: `10 millimeters to centimeters`
 
 `mm2 to cm2`, `cm2 to mm2`, `cm2 to m2 `, `m2 to cm2`, `m2 to km2`, `km2 to m2`, `mm2 to m2`, `m2 to mm2`
 
+## volume
+
+`ml to l`, `l to ml`, `l to m3`, `m3 to l`, `ml to m3`, `m3 to ml`, `cup to ml`, `ml to cup`, `cup to l`, `l to cup`, `gal to l`, `l to gal`, `oz to l`, `l to oz`
+
+## weight
+
+`g to kg`, `kg to g`, `lb to kg`, `kg to lb`, `oz to g`, `g to oz`, `lb to g`, `g to lb`
+
 ## time
 
 - s = seconds

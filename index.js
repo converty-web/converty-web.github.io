@@ -1,4 +1,6 @@
 const conversionRates = {
+  // length
+
   "mm-cm": x => x / 10,
   "cm-mm": x => x * 10,
   "cm-m": x => x / 100,
@@ -10,6 +12,8 @@ const conversionRates = {
   "km-mm": x => x * 1e6,
   "mm-km": x => x / 1e6,
 
+  // area
+
   "mm2-cm2": x => x / 100,
   "cm2-mm2": x => x * 100,
   "cm2-m2": x => x / 10000,
@@ -18,6 +22,36 @@ const conversionRates = {
   "km2-m2": x => x * 1e6,
   "mm2-m2": x => x / 1e6,
   "m2-mm2": x => x * 1e6,
+
+  // volume
+
+  "ml-l": x => x / 1000,
+  "l-ml": x => x * 1000,
+  "l-m3": x => x / 1000,
+  "m3-l": x => x * 1000,
+  "ml-m3": x => x / 1e6,
+  "m3-ml": x => x * 1e6,
+  "cup-ml": x => x * 240,
+  "ml-cup": x => x / 240,
+  "cup-l": x => x * 0.24,
+  "l-cup": x => x / 0.24,
+  "gal-l": x => x * 3.78541,
+  "l-gal": x => x / 3.78541,
+  "oz-l": x => x * 0.0295735,
+  "l-oz": x => x / 0.0295735,
+
+  // weight
+
+  "g-kg": x => x / 1000,
+  "kg-g": x => x * 1000,
+  "lb-kg": x => x * 0.453592,
+  "kg-lb": x => x / 0.453592,
+  "oz-g": x => x * 28.3495,
+  "g-oz": x => x / 28.3495,
+  "lb-g": x => x * 453.592,
+  "g-lb": x => x / 453.592,
+
+  // time
 
   "s-m": x => x / 60,
   "m-s": x => x * 60,
@@ -38,12 +72,16 @@ const conversionRates = {
   "d-y": x => x / 365.25,
   "y-d": x => x * 365.25,
 
+  // temperature
+
   "f-c": f => (f - 32) * 5 / 9,
   "c-f": c => (c * 9 / 5) + 32,
   "k-c": k => k - 273.15,
   "c-k": c => c + 273.15,
   "k-f": k => (k - 273.15) * 9 / 5 + 32,
   "f-k": f => (f - 32) * 5 / 9 + 273.15,
+
+  // electric
 
   "w-a-v": (w, v) => w / v,
   "w-v-a": (w, a) => w / a,
@@ -54,6 +92,8 @@ const conversionRates = {
 };
 
 const unitAbbreviations = {
+  // length
+
   millimeter: "mm",
   millimeters: "mm",
   centimeter: "cm",
@@ -63,6 +103,8 @@ const unitAbbreviations = {
   kilometer: "km",
   kilometers: "km",
 
+  // area
+
   millimeter2: "mm2",
   millimeters2: "mm2",
   centimeter2: "cm2",
@@ -71,6 +113,30 @@ const unitAbbreviations = {
   kilometers2: "km2",
   meter2: "m2",
   meters2: "m2",
+
+  // volume
+
+  milliliter: "ml",
+  milliliters: "ml",
+  liter: "l",
+  liters: "l",
+  meter3: "m3",
+  meters3: "m3",
+  gallon: "gal",
+  gallons: "gal",
+  ounce: "oz",
+  ounces: "oz",
+
+  // weight
+
+  gram: "g",
+  grams: "g",
+  kilogram: "kg",
+  kilograms: "kg",
+  pound: "lb",
+  pounds: "lb",
+
+  // time
 
   seconds: "s",
   second: "s",
@@ -86,10 +152,14 @@ const unitAbbreviations = {
   month: "mo",
   years: "y",
   year: "y",
+
+  // temperature
   
   kelvin: "k",
   celsius: "c",
   fahrenheit: "f",
+
+  // electric
 
   watts: "w",
   volts: "v",
