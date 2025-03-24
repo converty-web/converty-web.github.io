@@ -105,6 +105,14 @@ async function handleConversion(from, value, to, aValue, aUnit) {
   }
 }
 
+function formatNumber(num) {
+  if (num < 1) {
+    return num.toPrecision(3).replace(/\.?0+$/, "");
+  } else {
+    return num.toFixed(2);
+  }
+}
+
 document.getElementById("input").addEventListener("input", async function (event) {
   const input = event.target.value.toLowerCase().trim();
   const match = input.match(/^(\d+(?:.\d+)?)\s*([a-z2]+)\s+to\s+([a-z2]+)(?:\s+at\s+(\d+(?:.\d+)?)([a-z2]+))?$/);
@@ -125,7 +133,7 @@ document.getElementById("input").addEventListener("input", async function (event
   if (result === null) {
     document.getElementById("result").textContent = "waiting";
   } else {
-    document.getElementById("result").textContent = `${result.toPrecision(3)} ${toUnit}`;
+    document.getElementById("result").textContent = `${formatNumber(result)} ${toUnit}`;
   }
 });
 
